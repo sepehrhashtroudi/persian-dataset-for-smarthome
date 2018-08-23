@@ -47,7 +47,7 @@ def startcommand(bot, update):
 
     update.message.reply_text("اگر میشه در مورد " + devices[id_device.get(update.message.chat_id)[0]]+ " یه جمله بهم یاد بده.")
     id_device[update.message.chat_id] = [id_device.get(update.message.chat_id)[0],2]
-    print(id_device)
+    print(len(id_device))
 
 def textmessage (bot, update):
     user_input = update.message.text
@@ -66,12 +66,12 @@ def textmessage (bot, update):
         update.message.reply_text(
             "اگر میشه در مورد " + devices[id_device.get(update.message.chat_id)[0]] + " یه جمله بهم یاد بده.")
     np.save('user_chat_ids.npy', id_device)
-    print(id_device)
+    print(len(id_device))
 
 def cancel(bot, update):
     update.message.reply_text('باتشکر از همکاریتون اگر بعدا وقت داشتین ممنون میشم بازم برام جمله بفرستین')
     id_device.pop(update.message.chat_id,None)
-    print(id_device)
+    print(len(id_device))
 
 def help(bot, update):
     update.message.reply_text(
